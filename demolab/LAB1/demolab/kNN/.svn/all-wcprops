@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN
+END
+kNN.m
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/kNN.m
+END
+kNN_Eval_Brain.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/kNN_Eval_Brain.m
+END
+kNN_Eval.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/kNN_Eval.m
+END
+T1image.png
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/T1image.png
+END
+brainmasks.mat
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/brainmasks.mat
+END
+T2image.png
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/T2image.png
+END
+case1.mat
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/case1.mat
+END
+case2.mat
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/case2.mat
+END
+case3.mat
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/mi/!svn/ver/7149/tbmi26/course_contents/assignments/demolab/to_be_published/demolab/kNN/case3.mat
+END

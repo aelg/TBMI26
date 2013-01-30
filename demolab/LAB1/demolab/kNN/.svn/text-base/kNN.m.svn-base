@@ -1,0 +1,28 @@
+function cOut = kNN( x, Y, c, k)
+%KNN Your own kNN classifier!
+%   cOut = kNN(x, Y, c, k)
+%   
+%   cOut will be your output from kNN() and should thus be one of the
+%   classesd defined in c.
+%
+%   x is the feature vector we want to classify
+%
+%   Y is a matrix containing the training feature vectors used to classify 
+%   new vexctors
+%
+%   c is a vector containing the class of every vector in Y
+%
+%   k is the number of neighbours that will participate in the voting
+%   procedure.
+%
+%   There are many ways to implement kNN, but the functions max, hist, sort
+%   and sum might be worth looking at. (ie type 'help sum' or 'doc sum'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Enter you own code here
+cOut = round(rand(1)*3+1);
+
+
+end
+

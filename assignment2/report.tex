@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+%\documentclass[a4paper,9pt,landscape]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage[top=1.5cm, bottom=1cm, left=2.5cm, right=2.5cm]{geometry}
+\setlength{\voffset}{-9pt}
+%\setlength{\hoffset}{-1in}
+%\setlength{\marginparsep}{0.5cm}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{-0.1cm}
+\setlength{\parskip}{-0.1cm}
+%\setlength{\columnseprule}{0.4pt}
+\setlength{\footskip}{0.5cm}
+\setlength{\headheight}{9pt}
+\setlength{\headsep}{2cm}
+
+\fancypagestyle{tcr}{%
+  \fancyhf{} %clear all headers and footers fields
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{\textbf{Assignment 2 TBMI26}}
+  \renewcommand{\headrulewidth}{0.4pt}
+}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+  title=\lstname,
+  frame=t,
+  aboveskip=-0.5cm, 
+  belowskip=0pt,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  showstringspaces=false,         % underline spaces within strings
+  tabsize=2,
+  language=C++
+}
+
+
+\begin{document}
+%% title stuff
+\title{Assignment 2 TBMI26}
+\author{Linus Mellberg (linme560) Lukas Gillsjö (lukgi451)}
+\date{\today}
+\maketitle
+\pagebreak
+%\setcounter{page}{1}
+%\begin{multicols}{2}
+\thispagestyle{tcr}
+\pagestyle{tcr}
+%\tableofcontents
+
+\section{Backpropagation Network}
+\subsection{The Data Sets}
+\paragraph{Question 1}
+
+If the available data is split into training data and validation data, it is possible to validate the classifier.
+If all available data is used for training the classifier might be very good at exactly that data, but bad at classifying new data.
+The validation data makes it possible to test how the classifier performs on data it hasn't been trained on.
+The performance of the classifier on the validation data is likely to reflect how the classifier performs on new data.
+
+\paragraph{Question 2}
+
+The first data set consist of two separated cluster and a linear classifier can probably be used.
+The second data set consist of a cluster of one class with the other class 
+\end{document}
