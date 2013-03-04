@@ -32,9 +32,9 @@ end
 
 %% Start of code!
 % Design parameters (feel free to change them!)
-Nep      = 500;   %Number of epoches (training iterations)
-dim_hidd = 70;     %Number of hidden neurons.
-eta      = 0.01;  %Learning Rate
+Nep      = 1500;   %Number of epoches (training iterations)
+dim_hidd = 40;     %Number of hidden neurons.
+eta      = 0.1;  %Learning Rate
 
 % Constants
 N        = size(X,2);
@@ -182,5 +182,3 @@ function plot_data(X,I,I2)
    end
    hold off
 end
-
-
