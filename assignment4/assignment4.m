@@ -4,16 +4,18 @@ C = my_cov(countrydata);
 figure(1);
 colormap gray;
 imagesc(C);
+colorbar;
 title('Covariance');
 
 C = my_corr(countrydata);
 figure(2);
 colormap gray;
 imagesc(C);
+colorbar;
 title('Correlation');
 
 %PCA
-%normCountrydata = my_norm(countrydata);
+normCountrydata = my_norm(countrydata);
 %C
 C = my_corr(normCountrydata)
 
