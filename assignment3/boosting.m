@@ -40,10 +40,10 @@ yTrain = [ones(1,nbrTrainExamples), -ones(1,nbrTrainExamples)];
 % some new are generated. Hopefully there will be many good weak
 % classifiers left at the end.
 %for m = 1:5,
-    disp(sprintf('m: %d', m));
+    %disp(sprintf('m: %d', m));
     % Init weights
     d = (ones(1,nbrTrainExamples*2))/(nbrTrainExamples*2);
-    nbrClassifiers = 60;
+    nbrClassifiers = 200;
     %{
     if(m ~= 1), % Skip this in first run.
         % Find the ~ten most important features.
@@ -69,7 +69,7 @@ yTrain = [ones(1,nbrTrainExamples), -ones(1,nbrTrainExamples)];
         
         % Iterate through all features.
         for k = 1:nbrHaarFeatures,
-            % Calculate error when threshould is -inf
+            % Calculate error when threshold is -inf
             e = min(0, yTrain)*(-d)';
             
             % Sort on tresholds that we need to check.
@@ -177,8 +177,10 @@ disp(sprintf('Validation: %d of %d (%0.4f%%) correct', nbrCorrect, nbrValidateEx
 % Plot number of correct classification on the number of weak classifiers
 % used.
 correct_array = [];
+correct_Trainarray = [];
 for i = 1:nbrClassifiers
     nbrCorrect = 0;
+    nbrTrainCorrect = 0;
     for k = 1:1000,
         res = 0;
         if(sum((2*(xValidate(Classifiers(1:i,2), k).*Classifiers(1:i,4) >= Classifiers(1:i,4).*Classifiers(1:i,3))-1).*Classifiers(1:i,5)) > 0)
@@ -189,12 +191,30 @@ for i = 1:nbrClassifiers
         if(res == yValidate(k)),
             nbrCorrect = nbrCorrect + 1;
         end
+        res = 0;
+        if(sum((2*(xTrain(Classifiers(1:i,2), k).*Classifiers(1:i,4) >= Classifiers(1:i,4).*Classifiers(1:i,3))-1).*Classifiers(1:i,5)) > 0)
+            res = 1;
+        else
+            res = -1;
+        end
+        if(res == yTrain(k)),
+            nbrTrainCorrect = nbrTrainCorrect + 1;
+        end
     end
     correct_array = [correct_array nbrCorrect];
+    correct_Trainarray = [correct_Trainarray nbrTrainCorrect];
 end
 figure(5);
+%{
 plot(correct_array/10);
 title('Effect of # classifiers');
+xlabel('# classifiers');
+ylabel('# Correct classifications (%)');
+ylim([80 100]);
+%}
+
+plot(correct_Trainarray/10);
+title('Effect of # classifiers on training data');
 xlabel('# classifiers');
 ylabel('# Correct classifications (%)');
 ylim([80 100]);
