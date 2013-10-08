@@ -1,6 +1,6 @@
 
 nbrActions = 4;
-map = 8;
+map = 3;
 gwinit(map);
 s = gwstate;
 Q = rand(s.xsize, s.ysize, nbrActions)*(-1)-0.1;
@@ -8,7 +8,7 @@ Q = rand(s.xsize, s.ysize, nbrActions)*(-1)-0.1;
 %%
 
 gamma = 0.99;
-alpha = 0.2;
+alpha = 1;
 exploration = 0.3;
 
 %gwdraw;
@@ -27,12 +27,12 @@ what = [];
 actionMatrix = zeros(4,5);
 
 m = 0;
-for k = 1:1000,
+for k = 1:100,
     k
     while 1,
         oldstate = s;
         %a = sample(1:nbrActions, Q(s.pos(1), s.pos(2), :));
-        if rand < exploration ||  k < 20,
+        if rand < exploration %||  k < 20,
             a = floor(rem(rand()*1000, 4))+1;
         else
             [dummy, I] = max(Q(s.pos(1), s.pos(2), :));
@@ -86,10 +86,10 @@ for k = 1:1000,
         if s.isvalid,
             Q(oldstate.pos(1), oldstate.pos(2), a) = alpha*(gamma * max(Q(s.pos(1), s.pos(2), :)) + s.feedback) + (1-alpha)*Q(oldstate.pos(1), oldstate.pos(2), a);
         else
-            Q(oldstate.pos(1), oldstate.pos(2), a) = alpha*(-0.1) + (1-alpha)*Q(oldstate.pos(1), oldstate.pos(2), a);
+            Q(oldstate.pos(1), oldstate.pos(2), a) = -0.5 + Q(oldstate.pos(1), oldstate.pos(2), a);
         end
         if(s.isterminal),
-            Q(oldstate.pos(1), oldstate.pos(2), a) = 0.5;
+            Q(oldstate.pos(1), oldstate.pos(2), a) = 0;
             gwinit(map);
             break;
         end;

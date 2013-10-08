@@ -28,13 +28,17 @@ W = U(:,1:2);
 figure(4);
 clf;
 Y = W'*normCountrydata;
-classcolor = ['ro', 'go', 'bo'];
+classcolor = 'rogobo';
 classcolor
 for k = 1:length(normCountrydata),
-    plot(Y(1,k), Y(2,k), classcolor(int8(countryclass(k)*2:countryclass(k)*2+1)+1));
+    %if k == 42, % Georgia
+    %    plot(Y(1,k), Y(2,k), '+r');
+    %else
+        plot(Y(1,k), Y(2,k), classcolor(int8(countryclass(k)*2:countryclass(k)*2+1)+1));
+    %end
     hold on;
 end
-plot(Y(1,42), Y(2,42), 'xr');
+%plot(Y(1,42), Y(2,42), 'xr');
 for i = 1:length(countries),
     disp(i)
     disp(countries(i,:))
